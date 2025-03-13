@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import CatalogList from './pages/catalog/CatalogList.vue';
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">
-    syndra
-  </h1>
+  <CatalogList />
 </template>
 
 <style scoped></style>
