@@ -1,18 +1,13 @@
 <script setup lang="ts">
-import BrandSearch from '@/pages/catalog/BrandSearch.vue'
-import TypeSearch from '@/pages/catalog/TypeSearch.vue'
-import ProductList from '@/pages/catalog/ProductList.vue'
+import Layout from "@/components/layout/index.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <div class="flex">
-    <div class="w-1/4 p-4">
-      <BrandSearch />
-      <TypeSearch />
-    </div>
-    <div class="w-3/4 p-4">
-      <ProductList />
-    </div>
+  <div>
+    <Layout>
+      <RouterView />
+    </Layout>
   </div>
 </template>
 
