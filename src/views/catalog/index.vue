@@ -20,9 +20,9 @@
 </template>
 
 <script setup lang="ts">
-import BrandSearch from "./components/brand-search/index.vue";
-import TypeSearch from "./components/type-search/index.vue";
-import ProductList from "./components/product-list/index.vue";
+import BrandSearch from "./brand-search/index.vue";
+import TypeSearch from "./type-search/index.vue";
+import ProductList from "./product-list/index.vue";
 </script>
 
 <style scoped></style>
