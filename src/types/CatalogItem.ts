@@ -1,5 +1,5 @@
-export interface Catalog {
-  id: number;
+export interface CatalogItem {
+  // id: number;
   name: string;
   description: string;
   price: number;
