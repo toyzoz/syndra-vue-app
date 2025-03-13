@@ -18,8 +18,8 @@
 
 <script setup lang="ts">
 import { onMounted, ref, type Ref } from "vue";
-import type { CatalogBrand } from "@/types/CatalogBrand";
-import type { CatalogType } from "@/types/CatalogType";
+import type { CatalogBrand } from "@/types/catalog/CatalogBrand";
+import type { CatalogType } from "@/types/catalog/CatalogType";
 import TypeList from "./components/TypeList.vue";
 import BrandList from "./components/BrandList.vue";
 import ProductList from "./components/ProductList.vue";

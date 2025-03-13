@@ -13,7 +13,7 @@ import { ref } from "vue";
 import type { Ref } from "vue";
 
 import ProductCard from "./ProductCard.vue";
-import type { CatalogItem } from "@/types/CatalogItem";
+import type { CatalogItem } from "@/types/catalog/CatalogItem";
 const products: Ref<CatalogItem[]> = ref([
   {
     name: "商品1",

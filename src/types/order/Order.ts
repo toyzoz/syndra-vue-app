@@ -1,3 +1,8 @@
+export interface Order {
+  OrderItems: OrderItem[];
+  buyer: string;
+}
+
 export interface OrderItem {
   id: number;
   orderId: number;

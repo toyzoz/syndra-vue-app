@@ -1,6 +1,6 @@
 import axios from "axios";
-import type { CatalogBrand } from "@/types/CatalogBrand";
-import type { CatalogType } from "@/types/CatalogType";
+import type { CatalogBrand } from "@/types/catalog/CatalogBrand";
+import type { CatalogType } from "@/types/catalog/CatalogType";
 
 export async function getBrandListApi(): Promise<CatalogBrand[]> {
   const response = await axios.get<CatalogBrand[]>("/api/brands");
