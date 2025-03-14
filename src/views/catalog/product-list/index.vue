@@ -1,10 +1,15 @@
 <template>
   <div>product list</div>
-  <ProductCard v-for="product in 20" :product="product" />
+  <div v-for="item in products" :key="item.id">
+    {{ item }}
+  </div>
 </template>
 
 <script setup lang="ts">
-import ProductCard from "./ProductCard.vue";
+import type { CatalogItem } from "@/types/catalog/CatalogItem";
+
+const props = defineProps<{ products: CatalogItem[] }>();
+const products = props.products;
 </script>
 
 <style scoped></style>
