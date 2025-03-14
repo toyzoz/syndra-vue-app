@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .layout {
+        display: grid;
+        grid-template-columns: 250px auto;
+        grid-template-rows: 60px auto;
+        grid-template-areas:
+          "sidebar header"
+          "sidebar main";
+        height: 100vh;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        background: #333;
+        color: white;
+        padding: 20px;
+      }
+
+      .header {
+        grid-area: header;
+        background: #007bff;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .main-content {
+        grid-area: main;
+        padding: 20px;
+        background: #f4f4f4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>logo</h2>
+      <h2>管理系统</h2>
+      <p>菜单1</p>
+      <p>菜单2</p>
+      <p>菜单3</p>
+    </div>
+    <div class="main-container">
+      <div class="header">
+        <h2>Header</h2>
+      </div>
+      <div class="content">
+        <h2>Content</h2>
+      </div>
+    </div>
+  </body>
+</html>
