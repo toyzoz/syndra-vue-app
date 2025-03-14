@@ -16,6 +16,10 @@
     <div class="product-list">
       <ProductList :products="products" />
     </div>
+
+    <hr />
+
+    <button @click="handleClick">axios</button>
   </div>
 </template>
 
@@ -24,7 +28,11 @@ import BrandSearch from "./brand-search/index.vue";
 import TypeSearch from "./type-search/index.vue";
 import ProductList from "./product-list/index.vue";
 import { onMounted, ref, type Ref } from "vue";
-import { getBrandListApi, getCatalogListApi, getTypeListApi } from "@/api/catalog";
+import {
+  getBrandListApi,
+  getCatalogListApi,
+  getTypeListApi,
+} from "@/api/catalog";
 import type { CatalogItem } from "@/types/catalog/CatalogItem";
 import type { CatalogBrand } from "@/types/catalog/CatalogBrand";
 import type { CatalogType } from "@/types/catalog/CatalogType";
@@ -39,6 +47,10 @@ onMounted(async () => {
   brands.value = await getBrandListApi();
   types.value = await getTypeListApi();
 });
+
+async function handleClick() {
+  await getCatalogListApi();
+}
 </script>
 
 <style scoped></style>

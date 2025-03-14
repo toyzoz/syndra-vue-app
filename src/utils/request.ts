@@ -1,8 +1,10 @@
 // axios 拦截器
 import axios from "axios";
 
+console.log("axios", import.meta.env);
+
 const instance = axios.create({
-  baseURL: "http://localhost:10000",
+  baseURL: import.meta.env.VITE_BASE_API_URL,
   timeout: 1000,
   headers: { "X-Custom-Header": "foobar" },
 });
