@@ -1,10 +1,16 @@
 <template>
-  <div>
-    <Header />
-    <Main>
-      <RouterView />
-    </Main>
-    <Footer />
+  <div class="layout">
+    <div class="header">
+      <Header />
+    </div>
+    <div class="main">
+      <Main>
+        <RouterView />
+      </Main>
+    </div>
+    <div class="footer">
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -14,4 +20,26 @@ import Footer from "./Footer.vue";
 import Main from "./Main.vue";
 </script>
 
-<style scoped></style>
+<style scoped>
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  flex: 0 1 auto;
+  background-color: red;
+}
+
+.main {
+  flex: 1 1 auto;
+  overflow: auto;
+  background-color: blue;
+}
+
+.footer {
+  flex: 0 1 auto;
+  background-color: green;
+}
+</style>

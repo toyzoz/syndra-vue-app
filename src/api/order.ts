@@ -1,6 +1,6 @@
 import request from "@/utils/request";
 
-request.defaults.baseURL += "/order-api";
+request.defaults.baseURL += "/ordering-api";
 
 export function getOrderList(params: any) {
   return request({

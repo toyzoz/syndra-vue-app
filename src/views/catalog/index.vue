@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="catalog">
     <!-- 搜索 -->
     <div class="search">
       <!-- 品牌 -->
@@ -19,7 +19,9 @@
 
     <hr />
 
-    <button @click="handleClick">axios</button>
+    <div>
+      <button @click="handleClick">axios</button>
+    </div>
   </div>
 </template>
 
@@ -53,4 +55,27 @@ async function handleClick() {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.catalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.brand-search {
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.type-search {
+  border: 1px solid #ccc;
+  flex: 1;
+}
+</style>

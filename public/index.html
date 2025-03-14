@@ -5,54 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .layout {
-        display: grid;
-        grid-template-columns: 250px auto;
-        grid-template-rows: 60px auto;
-        grid-template-areas:
-          "sidebar header"
-          "sidebar main";
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: content-box;
+      }
+      .HolyGrail {
+        display: flex;
+        flex-direction: column;
         height: 100vh;
       }
+      header,
+footer {
+  flex: 1;
+}
 
-      .sidebar {
-        grid-area: sidebar;
-        background: #333;
-        color: white;
-        padding: 20px;
-      }
+.HolyGrail-body {
+  display: flex;
+  flex: 1;
+}
 
-      .header {
-        grid-area: header;
-        background: #007bff;
-        color: white;
-        display: flex;
-        align-items: center;
-        padding: 0 20px;
-      }
+.HolyGrail-content {
+  flex: 1;
+}
 
-      .main-content {
-        grid-area: main;
-        padding: 20px;
-        background: #f4f4f4;
-      }
+.HolyGrail-nav, .HolyGrail-ads {
+  /* 两个边栏的宽度设为12em */
+  flex: 0 0 12em;
+}
+
+.HolyGrail-nav {
+  /* 导航放到最左边 */
+  order: -1;
+}
     </style>
   </head>
   <body>
-    <div class="sidebar">
-      <h2>logo</h2>
-      <h2>管理系统</h2>
-      <p>菜单1</p>
-      <p>菜单2</p>
-      <p>菜单3</p>
-    </div>
-    <div class="main-container">
-      <div class="header">
-        <h2>Header</h2>
+    <body class="HolyGrail">
+      <header>#header</header>
+      <div class="HolyGrail-body">
+        <main class="HolyGrail-content">#left</main>
+        <nav class="HolyGrail-nav">#center</nav>
+        <aside class="HolyGrail-ads">#right</aside>
       </div>
-      <div class="content">
-        <h2>Content</h2>
-      </div>
-    </div>
+      <footer>#footer</footer>
   </body>
 </html>
