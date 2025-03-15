@@ -1,9 +1,11 @@
 export interface BasketItem {
   id: number;
-  name: string;
-  description: string;
-  price: number;
+  productId: number;
+  productName: string;
+  pictureUrl: string;
+  unitPrice: number;
   quantity: number;
+  oldUnitPrice: number;
 }
 
 export interface CustomerBasket {

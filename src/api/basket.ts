@@ -2,7 +2,7 @@ import request from "@/utils/request.ts";
 
 request.defaults.baseURL += "/basket-service";
 
-export function getBasketList() {
+export function getBasketListApi() {
   return request({
     url: "/basket",
     method: "get",

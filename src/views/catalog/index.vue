@@ -25,7 +25,7 @@
 import BrandSearch from "./brand-search/index.vue";
 import TypeSearch from "./type-search/index.vue";
 import ProductList from "./product-list/index.vue";
-import Pagination from "@/components/page/index.vue";
+import Pagination from "@/components/pagination/index.vue";
 import { onMounted, ref, type Ref } from "vue";
 import {
   getBrandListApi,

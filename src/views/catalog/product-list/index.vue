@@ -19,9 +19,9 @@ import type { CatalogItem } from "@/types/catalog/CatalogItem";
 
 defineProps<{ products: CatalogItem[] }>();
 
-function handleAddCart(productId: number) {
+const handleAddCart = (productId: number) => {
   console.log("Add Cart", productId);
-}
+};
 </script>
 
 <style scoped>
