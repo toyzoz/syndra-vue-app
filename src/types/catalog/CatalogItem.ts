@@ -3,4 +3,9 @@ export interface CatalogItem {
   name: string;
   description: string;
   price: number;
+  pictureFileName: string;
+  catalogTypeId: number;
+  catalogBrandId: number;
+  restockThreshold: number;
+  maxStockThreshold: number;
 }

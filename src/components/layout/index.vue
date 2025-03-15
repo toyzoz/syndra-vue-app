@@ -29,17 +29,15 @@ import Main from "./Main.vue";
 
 .header {
   flex: 0 1 auto;
-  background-color: red;
 }
 
 .main {
   flex: 1 1 auto;
   overflow: auto;
-  background-color: blue;
+  padding: 20px;
 }
 
 .footer {
   flex: 0 1 auto;
-  background-color: green;
 }
 </style>

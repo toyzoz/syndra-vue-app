@@ -1,6 +1,6 @@
 import request from "@/utils/request.ts";
 
-request.defaults.baseURL += "/basket-api";
+request.defaults.baseURL += "/basket-service";
 
 export function getBasketList() {
   return request({

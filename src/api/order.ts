@@ -1,35 +1,19 @@
+import type { Order } from "@/types/order/Order";
 import request from "@/utils/request";
 
-request.defaults.baseURL += "/ordering-api";
+request.defaults.baseURL += "/ordering-service";
 
-export function getOrderList(params: any) {
+export async function getOrderListApi(): Promise<Order[]> {
   return request({
-    url: "/order/list",
+    url: "/orders",
     method: "get",
-    params,
   });
 }
 
-export function getOrderDetail(params: any) {
+export function getOrderDetailApi(params: any) {
   return request({
     url: "/order/detail",
     method: "get",
     params,
-  });
-}
-
-export function getOrderStatus(params: any) {
-  return request({
-    url: "/order/status",
-    method: "get",
-    params,
-  });
-}
-
-export function updateOrderStatus(data: any) {
-  return request({
-    url: "/order/updateStatus",
-    method: "post",
-    data,
   });
 }

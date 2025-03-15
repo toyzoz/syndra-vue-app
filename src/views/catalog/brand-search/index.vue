@@ -1,23 +1,43 @@
 <template>
   <h2>Brand</h2>
-  <div class="brand-list" v-for="brand in brands" :key="brand.id">
-    <span>{{ brand.brand }}</span>
+  <hr />
+  <div class="brand-list">
+    <span>All</span>
+    <span
+      v-for="brand in brands"
+      :key="brand.id"
+      @click="selectBrand(brand.id)"
+      >{{ brand.brand }}</span
+    >
   </div>
 </template>
 
 <script setup lang="ts">
 import type { CatalogBrand } from "@/types/catalog/CatalogBrand";
-import { ref, type Ref } from "vue";
 
-const props = defineProps<{ brands: Ref<CatalogBrand[]> }>();
+defineProps<{ brands: CatalogBrand[] }>();
+const emit = defineEmits(["brand-select"]);
 
-const brands = props.brands;
-
-// 选中的brand
-const selectedBrand = ref(0);
-function selectBrand(brandId: number) {
-  selectedBrand.value = brandId;
-}
+const selectBrand = (brandId: number) => {
+  emit("brand-select", brandId);
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+.brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+}
+
+.brand-list span {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #333;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+</style>
