@@ -1,8 +1,22 @@
 <template>
-  <div class="pagination">
-    <button @click="prevPage" :disabled="currentPage === 1">上一页</button>
-    <span>第 {{ currentPage }} 页，共 {{ totalPages }} 页</span>
-    <button @click="nextPage" :disabled="currentPage === totalPages">
+  <div
+    class="pagination flex items-center justify-center gap-2 p-4 bg-white shadow-md rounded-lg"
+  >
+    <button
+      @click="prevPage"
+      :disabled="currentPage === 1"
+      class="pagination-button px-4 py-2 border border-gray-300 bg-gray-100 cursor-pointer transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-50 hover:bg-gray-200 rounded-md"
+    >
+      上一页
+    </button>
+    <span class="pagination-info text-sm font-medium text-gray-700"
+      >第 {{ currentPage }} 页，共 {{ totalPages }} 页</span
+    >
+    <button
+      @click="nextPage"
+      :disabled="currentPage === totalPages"
+      class="pagination-button px-4 py-2 border border-gray-300 bg-gray-100 cursor-pointer transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-50 hover:bg-gray-200 rounded-md"
+    >
       下一页
     </button>
   </div>
@@ -53,16 +67,4 @@ const nextPage = () => {
 };
 </script>
 
-<style scoped>
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-</style>
+<style scoped></style>

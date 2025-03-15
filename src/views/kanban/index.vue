@@ -1,5 +1,5 @@
 <template>
-  <div>stock kanban</div>
+  <div class="p-4 bg-white rounded shadow-md">stock kanban</div>
 
   <div class="product">
     <div class="product-header">

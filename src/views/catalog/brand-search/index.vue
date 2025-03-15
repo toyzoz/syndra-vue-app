@@ -1,14 +1,20 @@
 <template>
-  <h2>Brand</h2>
-  <hr />
-  <div class="brand-list">
-    <span>All</span>
-    <span
-      v-for="brand in brands"
-      :key="brand.id"
-      @click="selectBrand(brand.id)"
-      >{{ brand.brand }}</span
-    >
+  <div class="p-4 bg-white rounded shadow-md">
+    <h2 class="text-xl font-semibold mb-2">Brand</h2>
+    <hr class="mb-4" />
+    <div class="brand-list flex flex-wrap gap-2">
+      <span
+        class="cursor-pointer px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+        >All</span
+      >
+      <span
+        v-for="brand in brands"
+        :key="brand.id"
+        @click="selectBrand(brand.id)"
+        class="cursor-pointer px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+        >{{ brand.brand }}</span
+      >
+    </div>
   </div>
 </template>
 
@@ -23,21 +29,4 @@ const selectBrand = (brandId: number) => {
 };
 </script>
 
-<style scoped>
-.brand-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 100%;
-  padding: 10px;
-}
-
-.brand-list span {
-  cursor: pointer;
-  border: 1px solid #ccc;
-  background: #333;
-  color: #fff;
-  border-radius: 10px;
-  padding: 5px;
-}
-</style>
+<style scoped></style>

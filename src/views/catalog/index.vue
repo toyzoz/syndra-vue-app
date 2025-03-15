@@ -1,11 +1,11 @@
 <template>
-  <div class="catalog">
-    <div class="search">
-      <h5>Filters</h5>
-      <div class="brand-search">
+  <div class="catalog p-4">
+    <div class="search mb-4">
+      <h5 class="text-lg font-semibold mb-2">Filters</h5>
+      <div class="brand-search mb-4">
         <BrandSearch :brands="brands" @brand-select="handleBrandSelect" />
       </div>
-      <div class="type-search">
+      <div class="type-search mb-4">
         <TypeSearch :types="types" @type-select="handleTypeSelect" />
       </div>
     </div>
@@ -16,6 +16,7 @@
         :pageSize="pageSize"
         :pageIndex="pageIndex"
         @update:modelValue="handlePageChange"
+        class="mt-4"
       />
     </div>
   </div>
@@ -88,31 +89,4 @@ async function fetchbrandAndType() {
 }
 </script>
 
-<style scoped>
-.catalog {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  height: 100%;
-  padding: 10px;
-}
-
-.search {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 20%;
-  height: 100%;
-}
-
-.brand-search,
-.type-search {
-  border: 1px solid #ccc;
-  height: 100%;
-}
-
-.product-list {
-  width: 80%;
-  margin-left: 20px;
-}
-</style>
+<style scoped></style>

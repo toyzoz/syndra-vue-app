@@ -1,27 +1,64 @@
 <template>
-  <div class="basket-page">
-    <h1>购物车</h1>
+  <div class="basket-page p-4 bg-white rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-4">购物车</h1>
 
-    <div class="basket-info">
-      <div v-for="item in basketItems" :key="item.id" class="basket-item">
-        <img :src="item.pictureUrl" alt="商品图片" class="product-image" />
-        <div class="product-details">
-          <p class="product-name">{{ item.productName }}</p>
-          <p class="product-price">
-            <span class="current-price">{{ item.unitPrice }} 元</span>
-            <span v-if="item.oldUnitPrice" class="old-price"
+    <div class="basket-info space-y-4">
+      <div
+        v-for="item in basketItems"
+        :key="item.id"
+        class="basket-item flex items-center space-x-4 p-4 border rounded-lg shadow-sm"
+      >
+        <img
+          :src="item.pictureUrl"
+          alt="商品图片"
+          class="product-image w-24 h-24 object-cover rounded-lg"
+        />
+        <div class="product-details flex-1">
+          <p class="product-name text-lg font-semibold">
+            {{ item.productName }}
+          </p>
+          <p class="product-price text-gray-600">
+            <span class="current-price text-xl font-bold text-red-500"
+              >{{ item.unitPrice }} 元</span
+            >
+            <span
+              v-if="item.oldUnitPrice"
+              class="old-price line-through ml-2 text-gray-400"
               >{{ item.oldUnitPrice }} 元</span
             >
           </p>
-          <p class="product-quantity">数量: {{ item.quantity }}</p>
-          <input type="number" v-model="item.quantity" />
+          <p class="product-quantity text-gray-600">
+            数量: {{ item.quantity }}
+          </p>
+          <input
+            type="number"
+            v-model="item.quantity"
+            @change="updateQuantity(item.id, item.quantity)"
+            class="mt-2 p-2 border rounded-lg w-20"
+          />
+          <button
+            @click="removeItem(item.id)"
+            class="mt-2 p-2 bg-red-500 text-white rounded-lg"
+          >
+            删除
+          </button>
         </div>
       </div>
     </div>
 
-    <div class="basket-summary">
-      <p>总计: {{ getTotalPrice }} 元</p>
-      <button @click="checkout">结账</button>
+    <div class="basket-summary mt-6 p-4 border rounded-lg shadow-sm">
+      <p class="text-lg font-semibold">
+        总计:
+        <span class="text-xl font-bold text-red-500"
+          >{{ getTotalPrice }} 元</span
+        >
+      </p>
+      <button
+        @click="checkout"
+        class="mt-4 p-2 bg-blue-500 text-white rounded-lg"
+      >
+        结账
+      </button>
     </div>
   </div>
 </template>
@@ -67,66 +104,17 @@ const getTotalPrice = computed(() => {
     return total + item.unitPrice * item.quantity;
   }, 0);
 });
+
+const removeItem = (id: number) => {
+  basketItems.value = basketItems.value.filter((item) => item.id !== id);
+};
+
+const updateQuantity = (id: number, quantity: number) => {
+  const item = basketItems.value.find((item) => item.id === id);
+  if (item) {
+    item.quantity = quantity;
+  }
+};
 </script>
 
-<style scoped>
-.basket-page {
-  padding: 20px;
-}
-
-.basket-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.product-image {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-right: 20px;
-}
-
-.product-details {
-  flex: 1;
-}
-
-.product-name {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.product-price {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-.current-price {
-  color: red;
-  font-weight: bold;
-}
-
-.old-price {
-  text-decoration: line-through;
-  color: gray;
-  margin-left: 10px;
-}
-
-.product-quantity {
-  font-size: 14px;
-}
-
-.basket-summary {
-  margin-top: 20px;
-}
-
-.basket-summary p {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.basket-summary button {
-  padding: 10px 20px;
-  font-size: 16px;
-}
-</style>
+<style scoped></style>
