@@ -1,24 +1,18 @@
 <template>
-  <div class="p-4">
-    <h1 class="text-2xl font-bold mb-4">订单列表</h1>
-    <table class="min-w-full bg-white border border-gray-200">
-      <thead>
-        <tr>
-          <th class="py-2 px-4 border-b">订单ID</th>
-          <th class="py-2 px-4 border-b">客户名称</th>
-          <th class="py-2 px-4 border-b">订单金额</th>
-          <th class="py-2 px-4 border-b">订单日期</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="order in orders" :key="order.id" class="hover:bg-gray-100">
-          <td class="py-2 px-4 border-b">{{ order.id }}</td>
-          <td class="py-2 px-4 border-b">{{ order.customerName }}</td>
-          <td class="py-2 px-4 border-b">{{ order.amount }}</td>
-          <td class="py-2 px-4 border-b">{{ order.date }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="p-6 bg-gray-50">
+    <h1 class="text-3xl font-semibold text-gray-800 mb-6">订单列表</h1>
+    <div class="space-y-4">
+      <div
+        v-for="order in orders"
+        :key="order.id"
+        class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition"
+      >
+        <p class="text-gray-800 font-medium">订单ID: {{ order.id }}</p>
+        <p class="text-gray-600">客户名称: {{ order.customerName }}</p>
+        <p class="text-gray-600">订单金额: {{ order.amount }}</p>
+        <p class="text-gray-600">订单日期: {{ order.date }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,6 +29,4 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
-/* TailwindCSS classes are used directly in the template */
-</style>
+<style scoped></style>

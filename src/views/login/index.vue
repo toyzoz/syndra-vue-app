@@ -1,7 +1,9 @@
 <template>
   <div class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="bg-white p-8 rounded shadow-md w-full max-w-sm">
-      <h2 class="text-2xl font-bold mb-6 text-center">登录</h2>
+    <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md">
+      <h2 class="text-3xl font-semibold mb-6 text-center text-gray-800">
+        登录
+      </h2>
       <form>
         <div class="mb-4">
           <label
@@ -33,7 +35,7 @@
         </div>
         <div class="flex items-center justify-between">
           <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md w-full transition"
             type="button"
           >
             登录

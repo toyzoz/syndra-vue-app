@@ -1,8 +1,8 @@
 <template>
-  <div class="basket-page p-4 bg-white rounded shadow-md">
-    <h1 class="text-2xl font-bold mb-4">购物车</h1>
+  <div class="basket-page p-6 bg-gray-50 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-semibold text-gray-800 mb-6">购物车</h1>
 
-    <div class="basket-info space-y-4">
+    <div class="basket-info space-y-6">
       <div
         v-for="item in basketItems"
         :key="item.id"
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <div class="basket-summary mt-6 p-4 border rounded-lg shadow-sm">
+    <div class="basket-summary mt-8 p-6 bg-white rounded-lg shadow-md">
       <p class="text-lg font-semibold">
         总计:
         <span class="text-xl font-bold text-red-500"

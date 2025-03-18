@@ -1,7 +1,7 @@
 <template>
-  <div class="product-list p-4 bg-white rounded shadow-md">
+  <div class="product-list p-6 bg-gray-50 rounded-lg shadow-lg">
     <div
-      class="product-card flex flex-col md:flex-row items-center bg-gray-100 p-4 rounded-lg shadow-sm mb-4"
+      class="product-card card flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition mb-6"
       v-for="item in products"
       :key="item.id"
     >
